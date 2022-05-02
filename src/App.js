@@ -3,6 +3,7 @@ import StudCard from './StudCard'
 import StudCardClass from './StudCardClass'
 import MinMaxClass from './MinMaxClass'
 import Book from './JsxHm'
+import ReacTimer from './ReacTimer'
 
 function App() {
   return (
@@ -18,6 +19,8 @@ function App() {
         <Book name="React for beginners" year="2019" price="1200" />
         <Book name="Vue for beginners" year="2021" price="1500" />
       </div>
+
+      <ReacTimer />
     </div>
   )
 }
