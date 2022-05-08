@@ -2,6 +2,7 @@ import './App.css'
 import StudCard from './StudCard'
 import StudCardClass from './StudCardClass'
 import MinMaxClass from './MinMaxClass'
+import Book from './JsxHm'
 
 function App() {
   return (
@@ -12,6 +13,11 @@ function App() {
       <StudCardClass />
 
       <MinMaxClass />
+      <div>
+        <Book name="JS for beginners" year="2018" price="1000" />
+        <Book name="React for beginners" year="2019" price="1200" />
+        <Book name="Vue for beginners" year="2021" price="1500" />
+      </div>
     </div>
   )
 }
