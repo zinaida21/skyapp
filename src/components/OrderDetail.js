@@ -8,7 +8,7 @@ export default function OrderDetail(props) {
   }
 
   return props.items.map((item) => (
-    <div className="order-detail">
+    <div className="order-detail" key={item.id}>
       <h4 className="name" key={item.productName}>
         {item.productName}
       </h4>
