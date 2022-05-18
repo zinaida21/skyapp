@@ -113,7 +113,7 @@ export default class Order extends React.Component {
 
   DecrementQuantityWithPrice = (index) => {
     this.setState((prevState) => {
-      if (prevState.quantity === 0) {
+      if (prevState.details.find((item) => item.id === index).quantity === 0) {
         return {
           ...prevState,
         }
@@ -121,19 +121,7 @@ export default class Order extends React.Component {
       const updateDetails = prevState.details.map((item) =>
         item.id === index ? { ...item, quantity: item.quantity - 1 } : item
       )
-      /*
-      const updateDetails = prevState.details.map((item) => {
-        if (item.id === index) {
-          return {
-            ...item,
-            quantity: item.quantity[index] - 1,
-          }
-        }
-        return {
-          ...item,
-        }
-      })
-*/
+
       console.log(index)
 
       return {
@@ -146,41 +134,6 @@ export default class Order extends React.Component {
       }
     })
   }
-
-  /* let totalAmount = this.state.amount
-    let totalQuantity = this.state.quantity
-
-    const ArrDetails = this.state.details.map((item) => {
-      if (item.id === index && item.quantity >= 1) {
-        return {
-          id: item.id,
-          productName: item.productName,
-          price: item.price,
-          quantity: item.quantity - 1,
-        }
-      }
-      return {
-        id: item.id,
-        productName: item.productName,
-        price: item.price,
-        quantity: item.quantity,
-      }
-    })
-
-    ArrDetails.forEach((element) => {
-      if (element.id === index && totalQuantity >= 0 && element.quantity >= 0) {
-        totalQuantity -= 1
-        totalAmount -= element.price
-      }
-    })
-
-    this.setState({
-      amount: totalAmount,
-      quantity: totalQuantity,
-      details: ArrDetails,
-    })
-
-    */
 
   render() {
     // <OrderDetail />
